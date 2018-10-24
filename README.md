@@ -1,13 +1,10 @@
-# Project Name
+# Reviews-service
 
-> Project description
+> Review service component for Airbnb mockup
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/hrr34-fec5/reviews-proxy
 
 ## Table of Contents
 

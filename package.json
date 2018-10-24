@@ -4,13 +4,37 @@
   "description": "Reviews component for Airbnb mockup",
   "author": "me",
   "license": "MIT",
+  "main": "index.js",
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {},
-  "dependencies": {},
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "dev:react": "webpack -d --watch",
+    "db:setup": "node database/seed.js"
+  },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
-    "faker": "^4.1.0"
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "faker": "^4.1.0",
+    "webpack": "^4.23.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.3",
+    "express": "^4.16.4",
+    "jquery": "^3.3.1",
+    "moment": "^2.22.2",
+    "mongoose": "^5.3.6",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
   }
 }

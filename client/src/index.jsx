@@ -27,10 +27,22 @@ class App extends React.Component {
 
   render(){
     return (
-      <div className ="reviews-header">
-       <h2>{this.state.reviews.length} Reviews</h2>
-       <SummaryRatings reviewsStore={this.state.reviews} />
-       <ReviewsList reviewsStore={this.state.reviews} />
+      <div>
+        <div className ="reviews-header">
+          <div className = 'reviews-total'>
+            <div className = 'reviews-total-table'>
+              <div className = 'reviews-total-cell'>
+                <h2>{this.state.reviews.length} Reviews</h2>
+              </div>
+            </div>
+          </div>
+         <div className = 'searchbar'>
+         searchbar
+         </div>
+        <div className="review-entry-border"></div>
+        </div>
+        <SummaryRatings reviewsStore={this.state.reviews} />
+        <ReviewsList reviewsStore={this.state.reviews} />
       </div>
       )
   }

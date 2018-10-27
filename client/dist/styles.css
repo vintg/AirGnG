@@ -8,6 +8,94 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#reviews{
+  width:648px;
+  margin-left:10%;
+  display: block;
+}
+
+.reviews-header{
+  margin-left: -8px !important;
+  margin-right: -8px !important;
+}
+
+.reviews-total{
+  width: 66.66666666666666% !important;
+  float: left !important;
+  height: 56px !important;
+}
+
+.reviews-total-table{
+    display: table !important;
+    position: relative !important;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.reviews-total-cell{
+    display: table-cell !important;
+    vertical-align: bottom !important;
+    padding-bottom: 4px !important;
+}
+
+.searchbar{
+  width: 33.33333333333333% !important;
+  float: left !important;
+}
+
+.reviews-summary{
+  margin-left: -8px !important;
+  margin-right: -8px !important;
+}
+
+.ratings-left{
+  width: 50% !important;
+  float: left !important;
+  box-sizing: border-box;
+}
+
+.rating-row{
+  margin-left: -8px !important;
+  margin-right: -8px !important;
+  margin-bottom: 12px;
+}
+
+.rating-col{
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  min-height: 1px !important;
+  position: relative !important;
+  width: 50% !important;
+  float: left !important;
+}
+
+.rating-type{
+    margin: 0px !important;
+    word-wrap: break-word !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    letter-spacing: normal !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    text-transform: undefined !important;
+    color: #484848 !important;
+    padding-top: undefined !important;
+    padding-bottom: undefined !important;
+    font-weight: normal !important;
+    display: inline !important;
+}
+
+.ratings-right{
+  width: 50% !important;
+  float: left !important;
+  padding-left: 16px !important;
+  box-sizing: border-box;
+}
+
+.rating-stars{
+  float: right !important;
+  padding-top: 2px !important;
+}
+
 h2, .h2 {
     line-height: 1;
     text-rendering: optimizelegibility;
@@ -92,6 +180,21 @@ h2, .h2 {
 }
 
 .review-readmore{
-  color: var(--color-text-link, #008489) !important;
-  font-family: var(--font-font_family, Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif) !important;
+    color: #008489 !important;
+    font: inherit !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    text-decoration: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background: transparent !important;
+    border: 0px !important;
+    cursor: pointer !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    -webkit-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+    user-select: auto !important;
+    text-align: left !important;
 }

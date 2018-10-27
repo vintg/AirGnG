@@ -6,7 +6,7 @@ var generateRandomReview = () =>{
   return {
     author: faker.name.firstName(),
     avatarUrl: faker.image.avatar(),
-    reviewText: faker.lorem.sentences(1+Math.floor(Math.random()*3),Math.floor(Math.random()*3)+7),
+    reviewText: faker.lorem.sentences(13+Math.floor(Math.random()*3),Math.floor(Math.random()*7)),
     reply: (Math.random()<.1)? generateRandomReview(): {},
     ratings: {
       Accuracy: Math.floor(Math.random()*2)+3,

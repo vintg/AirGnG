@@ -14,7 +14,7 @@ const reviewSchema = new mongoose.Schema({
     Communication: Number,
     Cleanliness: Number,
     Location: Number,
-    Check-in: Number,
+    Checkin: Number,
     Value: Number
   }
 },

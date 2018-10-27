@@ -20,12 +20,13 @@ const Review =({reviewEntry})=> (
     <div className = 'review-entry-text'>
       {reviewEntry.reviewText.slice(0,140)+'...'}
 
-      <div className = 'review-entry-text-full' style = 'display:none'>
-        {reviewEntry.reviewText}
-        {// <Review reviewEntry={reviewEntry.reply} />
-        }
-      </div>
-
+      {
+      // <div className = 'review-entry-text-full'>
+      //   {reviewEntry.reviewText}
+      //   {// <Review reviewEntry={reviewEntry.reply} />
+      //   }
+      // </div>
+      }
       <button type="button" className="review-readmore" onClick={()=> {
         $('button').closest('.review-entry-text-full').style.display = 'block';
         $('button').closest('.review-entry-text').style.display = 'none';

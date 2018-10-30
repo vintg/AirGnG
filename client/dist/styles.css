@@ -77,6 +77,11 @@ body {
 
 }
 
+.review-flag-button:hover{
+  opacity:1;
+   cursor: pointer;
+}
+
 .searchbar{
   margin-top:1em;
   width: 33.33333333333333% !important;
@@ -168,10 +173,12 @@ button:focus {
 .rating-col{
   padding-left: 8px !important;
   padding-right: 8px !important;
-  min-height: 1px !important;
+  min-height: 1em !important;
   position: relative !important;
   width: 50% !important;
   float: left !important;
+
+  display:inline;
 }
 
 .rating-type{
@@ -204,6 +211,7 @@ button:focus {
   padding-top: 2px !important;
 
   height:23px;
+  display:inline-block;
 }
 
 h2, .h2 {

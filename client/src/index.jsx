@@ -11,7 +11,8 @@ class App extends React.Component {
     super();
     this.state = {
       reviews: [],
-      currentRental: null
+      currentRental: null,
+      overallRating: 5
     }
     this.getReviews = this.getReviews.bind(this);
   }
@@ -35,6 +36,11 @@ class App extends React.Component {
             <div className = 'reviews-total-table'>
               <div className = 'reviews-total-cell'>
                 <h2>{this.state.reviews.length} Reviews</h2>
+                  <div className = "rating-stars" className="star-ratings-sprite-large">
+                    <span className = "star-ratings-sprite-rating-large"
+                    style = {{width:`${this.state.overallRating}`}}>
+                    </span>
+                  </div>
               </div>
             </div>
           </div>

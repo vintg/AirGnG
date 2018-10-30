@@ -4,6 +4,7 @@ import $ from 'jquery';
 
 import SummaryRatings from './components/SummaryRatings.jsx';
 import ReviewsList from './components/ReviewsList.jsx';
+import Searchbar from './components/Searchbar.jsx';
 
 class App extends React.Component {
   constructor(){
@@ -12,23 +13,24 @@ class App extends React.Component {
       reviews: [],
       currentRental: null
     }
+    this.getReviews = this.getReviews.bind(this);
   }
 
   componentDidMount(){
     this.getReviews();
   }
 
-  getReviews(){
-    $.get('/api/reviews', reviews => {
+  getReviews(query){
+    var search = {reviewText:query};
+    $.get('/api/reviews', search, reviews => {
         this.setState({reviews: reviews})
-        console.log(this.state.reviews);
     });
   }
 
   render(){
     return (
-      <div>
-        <div className ="reviews-header">
+      <div className = 'reviews-container'>
+        <div className ='reviews-header'>
           <div className = 'reviews-total'>
             <div className = 'reviews-total-table'>
               <div className = 'reviews-total-cell'>
@@ -37,7 +39,7 @@ class App extends React.Component {
             </div>
           </div>
          <div className = 'searchbar'>
-         searchbar
+           <Searchbar searchSubmit={this.getReviews}/>
          </div>
         <div className="review-entry-border"></div>
         </div>

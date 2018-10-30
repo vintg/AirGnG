@@ -6,6 +6,10 @@ body {
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  padding: 0;
+  margin: 0;
+
 }
 
 #reviews{
@@ -14,15 +18,28 @@ body {
   display: block;
 }
 
+.reviews-container{
+
+}
+
+.reviews-list{
+  margin-left: 0px;
+
+   opacity:.8;
+}
+
 .reviews-header{
-  margin-left: -8px !important;
-  margin-right: -8px !important;
+  margin-left: 36px !important;
+  margin-right: 0px !important;
+
 }
 
 .reviews-total{
   width: 66.66666666666666% !important;
   float: left !important;
   height: 56px !important;
+
+  margin-top: 1.8em;
 }
 
 .reviews-total-table{
@@ -30,6 +47,8 @@ body {
     position: relative !important;
     height: 100% !important;
     width: 100% !important;
+
+    border-bottom:1px solid #ebebeb;
 }
 
 .reviews-total-cell{
@@ -38,20 +57,106 @@ body {
     padding-bottom: 4px !important;
 }
 
+.review-flag{
+  display: table-cell !important;
+  vertical-align: top !important;
+}
+
+.review-flag-button{
+  padding:-4px;
+  margin:-4px;
+  height:32px;
+  width:32px;
+
+   background-color:transparent;
+   border:none;
+
+   background-image: url("flag.png");
+   background-repeat: no-repeat;
+   opacity:0.7;
+
+}
+
 .searchbar{
+  margin-top:1em;
   width: 33.33333333333333% !important;
   float: left !important;
+
+  height:80px;
+  border-bottom:1px solid #ebebeb;
+}
+
+.search-bar{
+  background-image: url("searchicon.png");
+  background-repeat: no-repeat;
+  padding-left:24px;
+ margin-top: 1.8em;
+
+  display: block !important;
+  width: 100% !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: solid 1px #EBEBEB;
+
+  border-width: var(--border-form-element-border-width, 1px) !important;
+    border-color: var(--color-input-border, #EBEBEB) !important;
+    border-radius: var(--border-form-element-border-radius, 2px) !important;
+    background-color: var(--color-input-background, #ffffff) !important;
+    margin-bottom: var(--unit, 8px) !important;
+    font-size: var(--font-text-small-font-size, 14px) !important;
+    line-height: var(--font-text-small-line-height, 18px) !important;
+    letter-spacing: var(--font-text-small-letter-spacing, normal) !important;
+    font-family: var(--font-text-small-font-family, Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif) !important;
+    text-transform: var(--font-text-small-text-transform, undefined) !important;
+    color: var(--font-text-small-color, #484848) !important;
+    padding-top: var(--font-text-small-padding-top, undefined) !important;
+    padding-bottom: var(--font-text-small-padding-bottom, undefined) !important;
+}
+
+.search-form{
+  border:none;
+
+  background-color: var(--color-clear, transparent) !important;
+    font-size: var(--font-text-small-font-size, 14px) !important;
+    line-height: var(--font-text-small-line-height, 18px) !important;
+    letter-spacing: var(--font-text-small-letter-spacing, normal) !important;
+    font-family: var(--font-text-small-font-family, Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif) !important;
+    text-transform: var(--font-text-small-text-transform, undefined) !important;
+    color: var(--font-text-small-color, #484848) !important;
+    padding-top: var(--spacing-form-element-small-vertical, 7px) !important;
+    padding-bottom: var(--spacing-form-element-small-vertical, 7px) !important;
+
+    padding-left: var(--spacing-form-element-small-horizontal, 7px) !important;
+    padding-right: var(--spacing-form-element-small-horizontal, 7px) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.search-submit{
+  display: none;
 }
 
 .reviews-summary{
-  margin-left: -8px !important;
-  margin-right: -8px !important;
+  margin-left: 36px !important;
+  margin-right: 0px !important;
+
+  height:160px;
+  width:578px;
 }
 
 .ratings-left{
   width: 50% !important;
   float: left !important;
   box-sizing: border-box;
+
+  margin-top:1.2em;
+   opacity:.8;
 }
 
 .rating-row{
@@ -89,11 +194,16 @@ body {
   float: left !important;
   padding-left: 16px !important;
   box-sizing: border-box;
+
+  margin-top:1.2em;
+   opacity:.8;
 }
 
 .rating-stars{
   float: right !important;
   padding-top: 2px !important;
+
+  height:23px;
 }
 
 h2, .h2 {
@@ -171,6 +281,10 @@ h2, .h2 {
     padding-top: undefined !important;
     padding-bottom: undefined !important;
     font-weight: normal !important;
+}
+
+.review-entry-text-full{
+    display:none;
 }
 
 .review-entry-border{

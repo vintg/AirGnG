@@ -40,7 +40,7 @@ class App extends React.Component {
   }
 
   starify(val, n=5){
-    return (val/n).toFixed(2)*100+'%';
+    return Math.round(val/n * 2/2).toFixed(2)*100+'%';
   }
 
   calcRatings(){

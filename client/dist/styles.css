@@ -161,7 +161,6 @@ button:focus {
   box-sizing: border-box;
 
   margin-top:1.2em;
-   opacity:.8;
 }
 
 .rating-row{
@@ -182,6 +181,8 @@ button:focus {
 }
 
 .rating-type{
+    opacity:.8;
+
     margin: 0px !important;
     word-wrap: break-word !important;
     font-size: 16px !important;
@@ -203,7 +204,6 @@ button:focus {
   box-sizing: border-box;
 
   margin-top:1.2em;
-   opacity:.8;
 }
 
 .rating-stars{

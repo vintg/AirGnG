@@ -40,7 +40,7 @@ class App extends React.Component {
   }
 
   starify(val, n=5){
-    return Math.round(val/n * 2/2).toFixed(2)*100+'%';
+    return Math.ceil(((val/n).toFixed(1)*100)/10)*10+'%'; //half star rounding
   }
 
   calcRatings(){

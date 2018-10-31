@@ -10,7 +10,12 @@ app.use(express.static(__dirname + '/../client/dist'));
 
 app.get('/api/reviews', (req, res) => {
   console.log('GET /api/reviews');
-  var query = Reviews.find({});
+  var search = {};
+  if(req.query.reviewText!== undefined){
+    search = {reviewText: {'$regex': req.query.reviewText}};
+  }
+  console.log('executing', search);
+  var query = Reviews.find(search);
   query.exec((err, data)=> {
     if(err) return console.log(err);
     res.json(data);

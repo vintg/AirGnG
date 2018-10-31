@@ -9,12 +9,12 @@ var generateRandomReview = () =>{
     reviewText: faker.lorem.sentences(5+Math.floor(Math.random()*3),Math.floor(Math.random()*7)),
     reply: (Math.random()<.1)? generateRandomReview(): {},
     ratings: {
-      Accuracy: Math.floor(Math.random()*2)+3,
-      Communication: Math.floor(Math.random()*2)+3,
-      Cleanliness: Math.floor(Math.random()*2)+3,
-      Location: Math.floor(Math.random()*2)+3,
-      Checkin: Math.floor(Math.random()*2)+3,
-      Value: Math.floor(Math.random()*2)+3
+      Accuracy: Math.round(Math.random()*2+.3)+3,
+      Communication: Math.round(Math.random()*2+.3)+3,
+      Cleanliness: Math.round(Math.random()*2+.3)+3,
+      Location: Math.round(Math.random()*2+.3)+3,
+      Checkin: Math.round(Math.random()*2+.3)+3,
+      Value: Math.round(Math.random()*2+.3)+3
     }
   };
 };

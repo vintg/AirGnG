@@ -42,6 +42,7 @@
     "moment": "^2.22.2",
     "mongoose": "^5.3.6",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "reactstrap": "^6.5.0"
   }
 }

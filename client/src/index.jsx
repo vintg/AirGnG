@@ -11,22 +11,28 @@ class App extends React.Component {
     super();
     this.state = {
       reviews: [],
+      page: 1,
       currentRental: null,
       avgRatings: {},
       totalRatings: null
     }
     this.getReviews = this.getReviews.bind(this);
     this.starify = this.starify.bind(this);
+    this.changePage = this.changePage.bind(this);
   }
 
   componentDidMount(){
     this.getReviews();
   }
 
+  changePage(pg){
+    this.setState({page:pg});
+  }
+
   getReviews(query){
     var search = {reviewText:query};
     $.get('/api/reviews', search, reviews => {
-        this.setState({reviews: reviews})
+        this.setState({reviews: reviews});
         this.calcRatings();
     });
   }
@@ -80,7 +86,8 @@ class App extends React.Component {
         <div className="review-entry-border"></div>
         </div>
         <SummaryRatings ratingsStore={this.state.avgRatings} starify={this.starify}/>
-        <ReviewsList reviewsStore={this.state.reviews} />
+        <ReviewsList reviewsStore={this.state.reviews.slice(Math.max(0,(this.page-1)*7),this.page*7)}/>
+        <ReviewsNavi pgs={this.reviews.length} changePage={this.changePage}/>
       </div>
       )
   }

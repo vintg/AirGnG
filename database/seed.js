@@ -3,7 +3,7 @@ const Reviews = require('./Reviews.js');
 const faker = require('faker');
 
 const generateRandomReview = () =>{
-  let bias = 3.6; //0 to 3
+  let bias = 3.6; //0 to 5
   return {
     author: faker.name.firstName(),
     avatarUrl: faker.image.avatar(),

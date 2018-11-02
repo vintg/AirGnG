@@ -20,7 +20,7 @@ const generateRandomReview = () =>{
   };
 };
 
-const qtyRandomReviews = 21;
+const qtyRandomReviews = 210;
 const sampleReviewsStore = [];
 
 for (var i =0;i< qtyRandomReviews;i++){

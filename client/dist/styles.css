@@ -320,3 +320,115 @@ h2, .h2 {
     user-select: auto !important;
     text-align: left !important;
 }
+
+.reviews-navi{
+    margin: 0px !important;
+    padding: 0px !important;
+    box-sizing: border-box;
+    display: inline-block !important;
+}
+
+.navi-ul{
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-left: 25px;
+}
+
+.navi-page-item{
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin-right: 8px !important;
+  margin-left: 0px !important;
+}
+
+.navi-page-link{
+    display: inline-block !important;
+    background-color: transparent !important;
+    border: none !important;
+    color: #008489 !important;
+    font: inherit !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    text-decoration: none !important;
+}
+
+.navi-page-link-active{
+    display: inline-block !important;
+    background-color: transparent !important;
+    border: none !important;
+    font: inherit !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    text-decoration: none !important;
+    color: #ffffff !important;
+}
+
+.navi-page-link:hover{
+  cursor: pointer;
+}
+
+.navi-page-no{
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 16px !important;
+  line-height: 32px !important;
+  text-align: center !important;
+}
+
+.navi-page-no-active{
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 16px !important;
+  line-height: 32px !important;
+  text-align: center !important;
+  background-color: #008489 !important;
+  color: #ffffff !important;
+}
+
+.navi-page-no:hover{
+  text-decoration: underline;
+}
+
+.navi-prev{
+    display: inline-block !important;
+    vertical-align: middle !important;
+    margin-right: 8px !important;
+    margin-left: 0px !important;
+}
+
+.navi-next{
+    display: inline-block !important;
+    vertical-align: middle !important;
+    margin-left: 8px !important;
+    margin-right: 0px !important;
+}
+
+.navi-next-container{
+    background-color: transparent !important;
+    border-color: #008489 !important;
+    color: #008489 !important;
+    border: 1px solid !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 16px !important;
+    position: relative !important;
+}
+
+.navi-next-arrow{
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    -webkit-transform: translate(-50%, -50%) !important;
+    -ms-transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%) !important;
+    font-size: 0.75em !important;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+svg {
+  height:1em;
+  width:1em;
+  display:block;
+  fill:currentColor;
+}

@@ -56,9 +56,7 @@ class App extends React.Component {
         pageCt.push(i);
       }
     } else if (pg===3) {
-      console.log('pg = 3?', pg);
       for (var i=1;i<Math.min(5,totalpgs);i++){
-        console.log(i);
         pageCt.push(i);
       }
     } else if (pg===4) {
@@ -85,7 +83,6 @@ class App extends React.Component {
     }
 
     this.setState({pageCt:pageCt});
-    console.log('nav numbers', pageCt);
   }
 
   getReviews(query){

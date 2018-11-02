@@ -5,6 +5,8 @@ const DIST_DIR = path.join(__dirname, '/client/dist');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
@@ -35,25 +37,53 @@ module.exports = {
   },
 
   // css
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true // set to true if you want JS source maps
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "styles.css",
+      chunkFilename: "stylesAsync.css"
+    })
+  ],
   module: {
     rules: [
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader"
+        ]
       }
     ]
-  },
+  }
 
-  plugins: [
-    new ExtractTextPlugin('styles.css'),
-    new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.optimize\.css$/g,
-      cssProcessor: require('cssnano'),
-      cssProcessorPluginOptions: {
-        preset: ['default', { discardComments: { removeAll: true } }],
-      },
-      canPrint: true
-    })
-  ]
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.css$/,
+  //       loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+  //     }
+  //   ]
+  // },
+
+  // plugins: [
+  //   new ExtractTextPlugin('styles.css'),
+  //   new OptimizeCssAssetsPlugin({
+  //     assetNameRegExp: /\.optimize\.css$/g,
+  //     cssProcessor: require('cssnano'),
+  //     cssProcessorPluginOptions: {
+  //       preset: ['default', { discardComments: { removeAll: true } }],
+  //     },
+  //     canPrint: true
+  //   })
+  // ]
 
 };

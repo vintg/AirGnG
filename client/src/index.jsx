@@ -29,6 +29,13 @@ class App extends React.Component {
   }
 
   changePage(pg=1){
+    var totalpgs =Math.ceil(this.state.reviews.length/7);
+    if(pg<1) {
+      pg=1;
+    } else if(pg>totalpgs) {
+      pg = totalpgs;
+    }
+
     var pageView = this.state.reviews.slice(Math.max(0, (pg-1)*7), pg*7);
     this.setState({page:pageView});
     this.setState({currentPage:pg});

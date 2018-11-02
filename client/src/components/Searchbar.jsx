@@ -4,7 +4,6 @@ import $ from 'jquery';
 var Searchbar =({searchSubmit}) => (
   <div className="search-bar">
       <input className="search-form" type="text" placeholder = "Search reviews"
-      // onChange = { (e) => { updateSearch(e) }}
       onKeyPress={ (e) => {
         if(e.key === 'Enter')
           $('.search-submit').trigger('click');

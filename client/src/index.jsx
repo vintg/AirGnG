@@ -7,6 +7,10 @@ import ReviewsList from './components/ReviewsList.jsx';
 import Searchbar from './components/Searchbar.jsx';
 import ReviewsNavi from './components/ReviewsNavi.jsx';
 
+if (process.env.NODE_ENV !== 'production') {
+  console.log('Looks like we are in development mode!');
+}
+
 class App extends React.Component {
   constructor(){
     super();

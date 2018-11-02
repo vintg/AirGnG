@@ -4,7 +4,7 @@
 
 ## Related Projects
 
-  - https://github.com/hrr34-fec5/reviews-proxy
+  - https://github.com/hrr34-fec5/
 
 ## Table of Contents
 
@@ -14,7 +14,10 @@
 
 ## Usage
 
-> Some usage instructions
+> To seed sample review entries: npm run db-init
+> To run: 1. npm run web
+          2. npm run start
+> To recompile: npm run build
 
 ## Requirements
 
@@ -34,5 +37,4 @@ npm install -g webpack
 npm install
 ```
 
-# reviews-service
 # reviews-service

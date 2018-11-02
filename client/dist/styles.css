@@ -152,14 +152,15 @@ button:focus {
 
 .ratings-container{
     line-height: 34px;
-    height: 175px;
+    height: 173px;
+    width:670px;
 }
 
 .ratings-left{
     width: 50% !important;
     float: left !important;
-    padding-left: 48px !important;
-    padding-right: 8px !important;
+    padding-left: 36px !important;
+    padding-right: 8px !important; 
     min-height: 1px !important;
     position: relative !important;
     box-sizing: border-box;
@@ -182,6 +183,7 @@ button:focus {
 
 .rating-type{
     opacity:.8;
+    padding-left:8px;
 
     margin: 0px !important;
     word-wrap: break-word !important;
@@ -200,9 +202,10 @@ button:focus {
 .ratings-right{
   width: 50% !important;
   float: left !important;
-  padding-left: 48px !important;
+  padding-left: 36px !important;
   box-sizing: border-box;
   margin-top: 8px;
+  /* margin-right: 30px; */
 }
 
 .rating-stars{

@@ -3,7 +3,8 @@ import $ from 'jquery';
 
 const NaviItem=({pgNo, changePage, activePg})=>(
   <li className = "navi-page-item">
-    <button type="button" className = {"navi-page-link" + (pgNo===activePg)? " navi-page-link-active":""}
+    <button type="button"
+      className = {(pgNo===activePg)? "navi-page-link navi-page-link-active":"navi-page-link"}
       onClick={ (e)=> {
         var targetPage = parseInt($(e.target).html());
         var selected = $(e.target).parent();
@@ -18,7 +19,9 @@ const NaviItem=({pgNo, changePage, activePg})=>(
           changePage(targetPage);
         }
       }}>
-      <div className = {"navi-page-no" + (pgNo===activePg)? " navi-page-no-active":""}> {pgNo} </div>
+      <div className = {(pgNo===activePg)? "navi-page-no navi-page-no-active":"navi-page-no"}>
+        {pgNo}
+      </div>
     </button>
   </li>
 );

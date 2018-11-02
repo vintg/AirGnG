@@ -2,7 +2,7 @@ import React from 'react';
 
 const SummaryRatings =({ratingsStore, starify})=> (
   <div className = "reviews-summary">
-
+   <div className="ratings-container">
     <div className = "ratings-left">
 
       <div className = "rating-row">
@@ -88,7 +88,7 @@ const SummaryRatings =({ratingsStore, starify})=> (
       </div>
 
     </div>
-
+   </div>
   </div>
 
 );

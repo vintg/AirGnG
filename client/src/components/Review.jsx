@@ -25,9 +25,11 @@ const Review =({reviewEntry})=> (
     </div>
 
     <div className = 'review-entry-text'>
-        {reviewEntry.reviewText.slice(0,200)+'...'}
+        {(reviewEntry.reviewText.length>240)? reviewEntry.reviewText.slice(0,240)+'...' :reviewEntry.reviewText }
 
-          <button type="button" className="review-readmore"
+       {
+        (reviewEntry.reviewText.length>240)?
+         (<button type="button" className="review-readmore"
           onClick={ (e)=> {
             var selected = $(e.target).parent();
             var expanded = reviewEntry.reviewText;
@@ -38,7 +40,8 @@ const Review =({reviewEntry})=> (
               selected.append(`<Review reviewEntry={reviewEntry.reply} />`);
             }
           }}> Read more </button>
-
+         ):""
+       }
     </div>
 
     <div className="review-entry-border"></div>

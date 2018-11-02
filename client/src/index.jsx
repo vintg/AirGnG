@@ -5,28 +5,90 @@ import $ from 'jquery';
 import SummaryRatings from './components/SummaryRatings.jsx';
 import ReviewsList from './components/ReviewsList.jsx';
 import Searchbar from './components/Searchbar.jsx';
+import ReviewsNavi from './components/ReviewsNavi.jsx';
 
 class App extends React.Component {
   constructor(){
     super();
     this.state = {
       reviews: [],
+      page: [],
+      pageCt: [1],
+      currentPage: 1,
       currentRental: null,
       avgRatings: {},
       totalRatings: null
     }
     this.getReviews = this.getReviews.bind(this);
     this.starify = this.starify.bind(this);
+    this.changePage = this.changePage.bind(this);
   }
 
   componentDidMount(){
     this.getReviews();
   }
 
+  changePage(pg=1){
+    var totalpgs =Math.ceil(this.state.reviews.length/7);
+    if(pg<1) {
+      pg=1;
+    } else if(pg>totalpgs) {
+      pg = totalpgs;
+    }
+
+    var pageView = this.state.reviews.slice(Math.max(0, (pg-1)*7), pg*7);
+    this.setState({page:pageView});
+    this.setState({currentPage:pg});
+    this.setPageCt(pg);
+  }
+
+  setPageCt(pg=1){
+    pg = Number(pg);
+    var pageCt = [];
+    var totalpgs = Math.ceil(this.state.reviews.length/7);
+
+    if(pg<3){
+      for (var i=1;i<Math.min(4,totalpgs);i++){
+        pageCt.push(i);
+      }
+    } else if (pg===3) {
+      console.log('pg = 3?', pg);
+      for (var i=1;i<Math.min(5,totalpgs);i++){
+        console.log(i);
+        pageCt.push(i);
+      }
+    } else if (pg===4) {
+      for (var i=1;i<Math.min(6,totalpgs);i++){
+        pageCt.push(i);
+      }
+    } else if (pg>=5){
+      pageCt.push(1);
+      pageCt.push('...');
+      for(var i=pg-1; i<Math.min(pg+2, totalpgs); i++){
+        pageCt.push(i);
+      }
+    }
+
+    if(pg<totalpgs-2){
+      pageCt.push('...');
+      pageCt.push(totalpgs);
+    } else if(pg>=totalpgs-3) {
+      pageCt = pageCt.slice(0,2);
+      if(pg===totalpgs-2) pageCt.push(pg-1);
+      for(var i=Math.max(2,totalpgs-2);i<=totalpgs;i++){
+        pageCt.push(i);
+      }
+    }
+
+    this.setState({pageCt:pageCt});
+    console.log('nav numbers', pageCt);
+  }
+
   getReviews(query){
     var search = {reviewText:query};
     $.get('/api/reviews', search, reviews => {
-        this.setState({reviews: reviews})
+        this.setState({reviews: reviews});
+        this.changePage();
         this.calcRatings();
     });
   }
@@ -40,7 +102,7 @@ class App extends React.Component {
   }
 
   starify(val, n=5){
-    return Math.round(val/n * 2/2).toFixed(2)*100+'%';
+    return Math.ceil(((val/n).toFixed(1)*100)/10)*10+'%'; //half star rounding
   }
 
   calcRatings(){
@@ -80,7 +142,8 @@ class App extends React.Component {
         <div className="review-entry-border"></div>
         </div>
         <SummaryRatings ratingsStore={this.state.avgRatings} starify={this.starify}/>
-        <ReviewsList reviewsStore={this.state.reviews} />
+        <ReviewsList reviewsStore={this.state.page}/>
+        <ReviewsNavi pgs={this.state.pageCt} activePg={this.state.currentPage} changePage={this.changePage}/>
       </div>
       )
   }

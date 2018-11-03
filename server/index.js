@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const compression = require('compression');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-
+app.use(compression());
 const Reviews = require('../database/Reviews.js');
-const PORT = 1337;
+app.set('PORT', 1337);
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.get('/api/reviews', (req, res) => {
@@ -27,6 +28,6 @@ app.post('/api/reviews', (req, res) => {
 //TO-DO
 });
 
-app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
+const server = app.listen(app.get('PORT'), () => {
+  console.log(`listening on port `+server.address().port);
 });

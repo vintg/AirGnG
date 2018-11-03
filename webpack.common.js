@@ -53,16 +53,16 @@ module.exports = {
       chunkFilename: "stylesAsync.css"
     })
   ],
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader"
-        ]
-      }
-    ]
-  }
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.css$/,
+  //       use: [
+  //         MiniCssExtractPlugin.loader,
+  //         "css-loader"
+  //       ]
+  //     }
+  //   ]
+  // }
 
 };

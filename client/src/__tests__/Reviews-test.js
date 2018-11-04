@@ -1,12 +1,21 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { mount } from 'enzyme';
 
 import App from '../index';
+import SummaryRatings from '../components/SummaryRatings.jsx';
+import ReviewsList from '../components/ReviewsList.jsx';
+import Searchbar from '../components/Searchbar.jsx';
+import ReviewsNavi from '../components/ReviewsNavi.jsx';
 
-describe('Reviews <App />', () => {
+const wrapper = mount(<App />);
 
-  it('should render Searchbar, SummaryRatings, ReviewsList, and ReviewsNavi components', () => {
-    const wrapper = shallow(<App />);
+describe('Reviews', () => {
+
+  it('should render <App /> to the page', () => {
+    expect(wrapper.html().toLowerCase()).to.include('reviews-container');
+  });
+
+  it('should render four inner components', () => {
     expect(wrapper.find(Searchbar)).to.have.length(1);
     expect(wrapper.find(SummaryRatings)).to.have.length(1);
     expect(wrapper.find(ReviewsList)).to.have.length(1);
@@ -14,12 +23,12 @@ describe('Reviews <App />', () => {
   });
 
   // it('should render an `.icon-star`', () => {
-  //   const wrapper = shallow(<App />);
+  //   const wrapper = mount(<App />);
   //   expect(wrapper.find('.icon-star')).to.have.length(1);
   // });
 
   // it('should render children when passed in', () => {
-  //   const wrapper = shallow(
+  //   const wrapper = mount(
   //     <MyComponent>
   //       <div className="unique" />
   //     </MyComponent>
@@ -29,7 +38,7 @@ describe('Reviews <App />', () => {
 
   // it('simulates click events', () => {
   //   const onButtonClick = sinon.spy();
-  //   const wrapper = shallow(
+  //   const wrapper = mount(
   //     <Foo onButtonClick={onButtonClick} />
   //   );
   //   wrapper.find('button').simulate('click');

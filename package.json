@@ -13,7 +13,7 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "identity-obj-proxy"
     },
-    "setupTestFrameworkScriptFile": "<rootDir>jest.config.js"
+    "setupTestFrameworkScriptFile": "<rootDir>jestconfig.js"
   },
   "scripts": {
     "web": "nodemon server/index.js",
@@ -27,6 +27,7 @@
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "babel-polyfill": "^6.26.0",

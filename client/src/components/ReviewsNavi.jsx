@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import NaviItem from './NaviItem.jsx';
+import NaviItem from './NaviItem';
 
 const ReviewsNavi =({pgs, activePg, changePage})=> (
   <div className = "reviews-navi">

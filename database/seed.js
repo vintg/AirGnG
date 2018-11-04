@@ -1,5 +1,5 @@
-const db = require('./index.js');
-const Reviews = require('./Reviews.js');
+const db = require('./index');
+const Reviews = require('./Reviews');
 const faker = require('faker');
 
 const generateRandomReview = () =>{

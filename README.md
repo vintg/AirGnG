@@ -14,10 +14,11 @@
 
 ## Usage
 
-> To seed sample review entries: npm run db-init
-> To run: 1. npm run web
-          2. npm run start
-> To recompile: npm run build
+1. "web": "nodemon server/index.js",
+1. "dev": "webpack --watch --config webpack.dev.js",
+1. "build": "webpack --config webpack.prod.js",
+1. "db-init": "node database/seed.js",
+1. "test": "jest"
 
 ## Requirements
 

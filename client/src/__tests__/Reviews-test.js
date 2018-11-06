@@ -1,15 +1,19 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow, mount, render } from 'enzyme';
 
-import App from '../index';
-import SummaryRatings from '../components/SummaryRatings.jsx';
-import ReviewsList from '../components/ReviewsList.jsx';
-import Searchbar from '../components/Searchbar.jsx';
-import ReviewsNavi from '../components/ReviewsNavi.jsx';
+import App from '../App';
+import SummaryRatings from '../components/SummaryRatings';
+import ReviewsList from '../components/ReviewsList';
+import Searchbar from '../components/Searchbar';
+import ReviewsNavi from '../components/ReviewsNavi';
 
 const wrapper = mount(<App />);
 
 describe('Reviews', () => {
+
+  it('test', () => {
+    expect(1).to.equal(1);
+  });
 
   it('should render <App /> to the page', () => {
     expect(wrapper.html().toLowerCase()).to.include('reviews-container');

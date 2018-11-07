@@ -21,21 +21,21 @@ const generateRandomReview = (listingID) =>{
   };
 };
 
+const nlistings = 100;
+var sampleReviewsStore = [];
 
-const listingReviews = nlistings => {
-  for (var i=1; i<= nlistings;i++) {
-    const qtyRandomReviews = 100 + Math.random(200);
-    const sampleReviewsStore = [];
-
-    for (var j=0;j< qtyRandomReviews;j++){
-      sampleReviewsStore.push(generateRandomReview(i));
-    }
+for (var i=1; i<= nlistings;i++) {
+  var qtyRandomReviews = 100 + Math.random(200);
+  for (var j=0;j< qtyRandomReviews;j++){
+    sampleReviewsStore.push(generateRandomReview(i));
   }
-};
+}
 
 const insertSampleReviews = function() {
   Reviews.create(sampleReviewsStore)
-    .then(() => db.disconnect());
+    .then(() => db.disconnect())
+    .catch(err => console.log('Unable to connect to mongodb. Error: ', err));
 };
 
+insertSampleReviews();
 

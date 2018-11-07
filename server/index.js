@@ -22,23 +22,18 @@ app.use(express.static(__dirname + '/../client/dist'));
 // => "/users"
 
 app.get('listing/:id', (req, res) => {
-  console.log('GET /api/reviews/' + req.params.id);
+  console.log('GET listing/' + req.params.id);
   var search = {};
   if(req.query.reviewText!== undefined){
     search = {reviewText: {'$regex': req.query.reviewText}};
   }
-  search.listingID = req.params.id;
+  if (req.params.id) search.listingID = req.params.id;
 
   var query = Reviews.find(search);
   query.exec((err, data)=> {
     if(err) return console.log(err);
     res.json(data);
   });
-});
-
-app.post('/api/reviews', (req, res) => {
-  console.log('POST /api/reviews');
-//placeholder
 });
 
 const server = app.listen(app.get('PORT'), () => {

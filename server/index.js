@@ -25,7 +25,7 @@ app.get('/api/reviews', (req, res) => {
 
 app.post('/api/reviews', (req, res) => {
   console.log('POST /api/reviews');
-//TO-DO
+//placeholder
 });
 
 const server = app.listen(app.get('PORT'), () => {

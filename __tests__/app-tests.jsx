@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 
-import App from '../App';
-import SummaryRatings from '../components/SummaryRatings';
-import ReviewsList from '../components/ReviewsList';
-import Searchbar from '../components/Searchbar';
-import ReviewsNavi from '../components/ReviewsNavi';
+import App from '../client/src/App';
+import SummaryRatings from '../client/src/components/SummaryRatings';
+import ReviewsList from '../client/src/components/ReviewsList';
+import Searchbar from '../client/src/components/Searchbar';
+import ReviewsNavi from '../client/src/components/ReviewsNavi';
 
 const wrapper = shallow(<App />);
 

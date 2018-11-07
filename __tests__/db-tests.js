@@ -1,3 +1,19 @@
+describe('Reviews DB', () => {
+
+  it('contains obj of the defined schema', () => {
+
+  });
+
+  it('contains different review records', () => {
+
+  });
+
+  it('can assign nested replies of review obj class as a prop', () =>{
+
+  });
+
+});
+
 // var obj = () => {
 //   return {
 //     a:1,

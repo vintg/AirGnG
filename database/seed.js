@@ -26,7 +26,7 @@ let sampleReviewsStore = [];
 let qtyRandomReviews;
 
 for (let i=1; i<= nlistings;i++) {
-  qtyRandomReviews = 100 + Math.random(200);
+  qtyRandomReviews = 100 + Math.floor(Math.random()*200);
   for (let j=0;j< qtyRandomReviews;j++){
     sampleReviewsStore.push(generateRandomReview(i));
   }

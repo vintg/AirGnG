@@ -22,11 +22,12 @@ const generateRandomReview = (listingID) =>{
 };
 
 const nlistings = 100;
-var sampleReviewsStore = [];
+let sampleReviewsStore = [];
+let qtyRandomReviews;
 
-for (var i=1; i<= nlistings;i++) {
-  var qtyRandomReviews = 100 + Math.random(200);
-  for (var j=0;j< qtyRandomReviews;j++){
+for (let i=1; i<= nlistings;i++) {
+  qtyRandomReviews = 100 + Math.random(200);
+  for (let j=0;j< qtyRandomReviews;j++){
     sampleReviewsStore.push(generateRandomReview(i));
   }
 }

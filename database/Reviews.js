@@ -6,7 +6,6 @@ mongoose.Promise = global.Promise;
 
 const reviewSchema = new mongoose.Schema({
   listingID: {type: Number,
-              index: true,
               unique: true},
   author: String,
   avatarUrl: String,

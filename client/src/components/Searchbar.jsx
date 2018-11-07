@@ -1,7 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 
-var Searchbar =({searchSubmit}) => (
+const Searchbar =({searchSubmit}) => (
   <div className="search-bar">
       <input className="search-form" type="text" placeholder = "Search reviews"
       onKeyPress={ (e) => {
@@ -10,8 +10,9 @@ var Searchbar =({searchSubmit}) => (
       }}/>
       <button className="search-submit"
         onClick={ () => {
-          console.log('search submitted');
-          searchSubmit(document.getElementsByClassName('search-form')[0].value)
+          const query = document.getElementsByClassName('search-form')[0].value;
+          console.log('search submitted', query);
+          searchSubmit(query);
         }}>
       </button>
   </div>

@@ -9,13 +9,26 @@ const Reviews = require('../database/Reviews');
 app.set('PORT', 1337);
 app.use(express.static(__dirname + '/../client/dist'));
 
-app.get('/api/reviews', (req, res) => {
-  console.log('GET /api/reviews');
+// GET /search?q=something
+// req.originalUrl
+// => "/search?q=something"
+
+// GET /file/javascripts/jquery.js
+// req.params[0] (used with regex for window url)
+// => "javascripts/jquery.js"
+
+// example.com/users?sort=desc
+// req.path
+// => "/users"
+
+app.get('listing/:id', (req, res) => {
+  console.log('GET /api/reviews/' + req.params.id);
   var search = {};
   if(req.query.reviewText!== undefined){
     search = {reviewText: {'$regex': req.query.reviewText}};
   }
-  console.log('executing', search);
+  search.listingID = req.params.id;
+
   var query = Reviews.find(search);
   query.exec((err, data)=> {
     if(err) return console.log(err);

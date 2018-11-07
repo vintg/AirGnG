@@ -5,6 +5,7 @@ const faker = require('faker');
 mongoose.Promise = global.Promise;
 
 const reviewSchema = new mongoose.Schema({
+  listingID: Number,
   author: String,
   avatarUrl: String,
   reviewText: String,

@@ -2,9 +2,10 @@ const db = require('./index');
 const Reviews = require('./Reviews');
 const faker = require('faker');
 
-const generateRandomReview = () =>{
+const generateRandomReview = (listingID) =>{
   let bias = 3.6; //0 to 5
   return {
+    listingID: listingID,
     author: faker.name.firstName(),
     avatarUrl: faker.image.avatar(),
     reviewText: faker.lorem.sentences(5+Math.floor(Math.random()*3),Math.floor(Math.random()*7)),
@@ -20,16 +21,21 @@ const generateRandomReview = () =>{
   };
 };
 
-const qtyRandomReviews = 210;
-const sampleReviewsStore = [];
 
-for (var i =0;i< qtyRandomReviews;i++){
-  sampleReviewsStore.push(generateRandomReview());
-}
+const listingReviews = nlistings => {
+  for (var i=1; i<= nlistings;i++) {
+    const qtyRandomReviews = 100 + Math.random(200);
+    const sampleReviewsStore = [];
+
+    for (var j=0;j< qtyRandomReviews;j++){
+      sampleReviewsStore.push(generateRandomReview(i));
+    }
+  }
+};
 
 const insertSampleReviews = function() {
   Reviews.create(sampleReviewsStore)
     .then(() => db.disconnect());
 };
 
-insertSampleReviews();
+

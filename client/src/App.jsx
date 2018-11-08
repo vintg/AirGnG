@@ -37,7 +37,7 @@ class App extends React.Component {
   getReviews(query){
     const search = {reviewText:query};
     console.log('getting reviews for', this.state.currentRental);
-    $.get(`http://localhost:1337/reviews/${this.state.currentRental}`, search, reviews => {
+    $.get(`http://localhost:${process.env.PORT}/reviews/${this.state.currentRental}`, search, reviews => {
         this.setState({reviews: reviews});
         this.changePage();
         this.calcRatings();

@@ -1,0 +1,471 @@
+body {
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #484848;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  margin: 0 auto !important;
+  float: left;
+}
+
+#reviews{
+  width: 680px;
+  margin-left: 11%;
+  display: block;
+  box-sizing: border-box;
+}
+
+.reviews-container{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.reviews-list{
+  margin-left: 0px;
+
+   opacity:.8;
+}
+
+.reviews-header{
+  margin-left: 36px !important;
+  margin-right: 0px !important;
+}
+
+.reviews-total{
+  width: 66.66666666666666% !important;
+  float: left !important;
+  height: 56px !important;
+
+  margin-top: 1.8em;
+}
+
+.reviews-total-table{
+    display: table !important;
+    position: relative !important;
+    height: 100% !important;
+    width: 100% !important;
+    border-bottom:1px solid #ebebeb;
+    padding-bottom: 1.25em;
+}
+
+.reviews-total-cell{
+    display: table-cell !important;
+    vertical-align: bottom !important;
+    padding-bottom: 4px !important;
+}
+
+.review-flag{
+  display: table-cell !important;
+  vertical-align: top !important;
+}
+
+.review-flag-button{
+  margin: -8px;
+  height:32px;
+  width:32px;
+  background-color:transparent;
+  border:none;
+  background-image: url("img/flag.png");
+  background-repeat: no-repeat;
+  opacity:0.8;
+}
+
+.review-flag-button:hover{
+  opacity:1;
+  cursor: pointer;
+}
+
+.searchbar{
+  margin-top:1em;
+  width: 33.33333333333333% !important;
+  float: left !important;
+  height: 77px;
+  border-bottom:1px solid #ebebeb;
+}
+
+.search-bar{
+  background-image: url("img/searchicon.png");
+  background-repeat: no-repeat;
+  padding-left:24px;
+  margin-top: 1.8em;
+
+  display: block !important;
+  width: 100% !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: solid 1px #EBEBEB;
+  opacity:1;
+
+  border-width: var(--border-form-element-border-width, 1px) !important;
+    border-color: var(--color-input-border, #EBEBEB) !important;
+    border-radius: var(--border-form-element-border-radius, 2px) !important;
+    background-color: var(--color-input-background, #ffffff) !important;
+    margin-bottom: var(--unit, 8px) !important;
+    font-size: var(--font-text-small-font-size, 14px) !important;
+    line-height: var(--font-text-small-line-height, 18px) !important;
+    letter-spacing: var(--font-text-small-letter-spacing, normal) !important;
+    font-family: var(--font-text-small-font-family, Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif) !important;
+    text-transform: var(--font-text-small-text-transform, undefined) !important;
+    color: var(--font-text-small-color, #484848) !important;
+    padding-top: var(--font-text-small-padding-top, undefined) !important;
+    padding-bottom: var(--font-text-small-padding-bottom, undefined) !important;
+}
+
+.search-form{
+  border:none;
+
+  background-color: var(--color-clear, transparent) !important;
+    font-size: var(--font-text-small-font-size, 14px) !important;
+    line-height: var(--font-text-small-line-height, 18px) !important;
+    letter-spacing: var(--font-text-small-letter-spacing, normal) !important;
+    font-family: var(--font-text-small-font-family, Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif) !important;
+    text-transform: var(--font-text-small-text-transform, undefined) !important;
+    color: var(--font-text-small-color, #484848) !important;
+    padding-top: var(--spacing-form-element-small-vertical, 7px) !important;
+    padding-bottom: var(--spacing-form-element-small-vertical, 7px) !important;
+
+    padding-left: var(--spacing-form-element-small-horizontal, 7px) !important;
+    padding-right: var(--spacing-form-element-small-horizontal, 7px) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.search-submit{
+  display: none;
+}
+
+.reviews-summary{
+    margin-left: -8px !important;
+    margin-right: 24px !important;
+    box-sizing: border-box;
+}
+
+.ratings-container{
+    line-height: 34px;
+    height: 173px;
+    width:670px;
+}
+
+.ratings-left{
+    width: 50% !important;
+    float: left !important;
+    padding-left: 36px !important;
+    padding-right: 8px !important;
+    min-height: 1px !important;
+    position: relative !important;
+    box-sizing: border-box;
+    margin-top: 8px;
+}
+
+.rating-row{
+    margin-left: -8px !important;
+    margin-right: -8px !important;
+}
+
+.rating-col{
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    min-height: 1px !important;
+    position: relative !important;
+    width: 50% !important;
+    float: left !important;
+}
+
+.rating-type{
+    opacity:.8;
+    padding-left:8px;
+
+    margin: 0px !important;
+    word-wrap: break-word !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    letter-spacing: normal !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    text-transform: undefined !important;
+    color: #484848 !important;
+    padding-top: undefined !important;
+    padding-bottom: undefined !important;
+    font-weight: normal !important;
+    display: inline !important;
+}
+
+.ratings-right{
+  width: 50% !important;
+  float: left !important;
+  padding-left: 36px !important;
+  box-sizing: border-box;
+  margin-top: 8px;
+}
+
+.rating-stars{
+    float: right !important;
+    padding-top: 2px !important;
+}
+
+h2, .h2 {
+    line-height: 1;
+    text-rendering: optimizelegibility;
+    display: block;
+    font-size: 1.75em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.review-author{
+    display: table !important;
+    width: 100% !important;
+    border-spacing: 0px !important;
+}
+
+.review-author-avatar {
+    background: #D8D8D8 !important;
+    border-radius: 50% !important;
+    border: 2px solid #ffffff !important;
+    overflow: hidden !important;
+    height:48px;
+    width:48px;
+    margin-right:16px;
+    display: table-cell !important;
+    vertical-align: top !important;
+}
+
+.review-author-name{
+  display: table-cell !important;
+  width: 100% !important;
+  vertical-align: top !important;
+  font-weight: 600 !important;
+  margin: 0px !important;
+  word-wrap: break-word !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  letter-spacing: normal !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  text-transform: undefined !important;
+  color: #484848 !important;
+  padding-top: 2px !important;
+  padding-bottom: undefined !important;
+}
+
+.review-author-date{
+    margin: 0px !important;
+    word-wrap: break-word !important;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    letter-spacing: normal !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    text-transform: undefined !important;
+    color: #484848 !important;
+    padding-top: undefined !important;
+    padding-bottom: undefined !important;
+    font-weight: normal !important;
+    display: block !important;
+}
+
+.review-entry-text{
+    margin-top: 22px !important;
+    word-wrap: break-word !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    letter-spacing: normal !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    text-transform: undefined !important;
+    color: #484848 !important;
+    padding-top: undefined !important;
+    padding-bottom: undefined !important;
+    font-weight: normal !important;
+}
+
+.review-entry-text-full{
+    display:none;
+}
+
+.review-entry-border{
+  border-bottom: 1px solid #EBEBEB !important;
+  margin-top:24px;
+  margin-bottom:24px;
+}
+
+.review-readmore{
+    color: #008489 !important;
+    font: inherit !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    text-decoration: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background: transparent !important;
+    border: 0px !important;
+    cursor: pointer !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    -webkit-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+    user-select: auto !important;
+    text-align: left !important;
+}
+
+.reviews-navi{
+    margin: 0px !important;
+    padding: 0px !important;
+    box-sizing: border-box;
+    display: inline-block !important;
+}
+
+.navi-ul{
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-left: 25px;
+}
+
+.navi-page-item{
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin-right: 8px !important;
+  margin-left: 0px !important;
+}
+
+.navi-page-link{
+    display: inline-block !important;
+    background-color: transparent !important;
+    border: none !important;
+    color: #008489 !important;
+    font: inherit !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    text-decoration: none !important;
+}
+
+.navi-page-link-active{
+    display: inline-block !important;
+    background-color: transparent !important;
+    border: none !important;
+    font: inherit !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    text-decoration: none !important;
+    color: #ffffff !important;
+}
+
+.navi-page-link:hover{
+  cursor: pointer;
+}
+
+.navi-page-no{
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 16px !important;
+  line-height: 32px !important;
+  text-align: center !important;
+}
+
+.navi-page-no-active{
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 16px !important;
+  line-height: 32px !important;
+  text-align: center !important;
+  background-color: #008489 !important;
+  color: #ffffff !important;
+}
+
+.navi-page-no:hover{
+  text-decoration: underline;
+}
+
+.navi-prev{
+    display: inline-block !important;
+    vertical-align: middle !important;
+    margin-right: 8px !important;
+    margin-left: 0px !important;
+}
+
+.navi-next{
+    display: inline-block !important;
+    vertical-align: middle !important;
+    margin-left: 8px !important;
+    margin-right: 0px !important;
+}
+
+.navi-next-container{
+    background-color: transparent !important;
+    border-color: #008489 !important;
+    color: #008489 !important;
+    border: 1px solid !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 16px !important;
+    position: relative !important;
+}
+
+.navi-next-arrow{
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    -webkit-transform: translate(-50%, -50%) !important;
+    -ms-transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%) !important;
+    font-size: 0.75em !important;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+svg {
+  height:1em;
+  width:1em;
+  display:block;
+  fill:currentColor;
+}
+
+.star-ratings-sprite {
+  background: url("img/star-rating-sprite16.png") repeat-x;
+  font-size: 0;
+  height: 25px;
+  line-height: 0;
+  overflow: hidden;
+  width: 110px;
+  margin-top: -30px;
+  margin-left: 200px;
+}
+
+.star-ratings-sprite-rating {
+    background: url("img/star-rating-sprite16.png") repeat-x;
+    background-position: 0 100%;
+    float: left;
+    height: 25px;
+    display:block;
+    margin: 0 auto;
+}
+
+.star-ratings-sprite-large {
+  background: url("img/star-rating-sprite.png") repeat-x;
+  font-size: 0;
+  height: 25px;
+  line-height: 0;
+  overflow: hidden;
+  width: 125px;
+  margin-top: -45px;
+  margin-left: 175px;
+}
+
+.star-ratings-sprite-rating-large {
+    background: url("img/star-rating-sprite.png") repeat-x;
+    background-position: 0 100%;
+    float: left;
+    height: 25px;
+    display:block;
+    margin: 0 auto;
+}

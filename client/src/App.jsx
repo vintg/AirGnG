@@ -6,6 +6,8 @@ import ReviewsList from './components/ReviewsList';
 import Searchbar from './components/Searchbar';
 import ReviewsNavi from './components/ReviewsNavi';
 
+const port = 1337; //process.env.PORT;
+
 class App extends React.Component {
   constructor(props){
     super();
@@ -37,7 +39,7 @@ class App extends React.Component {
   getReviews(query){
     const search = {reviewText:query};
     console.log('getting reviews for', this.state.currentRental);
-    $.get(`http://localhost:${process.env.PORT}/reviews/${this.state.currentRental}`, search, reviews => {
+    $.get(`http://localhost:${port}/reviews/${this.state.currentRental}`, search, reviews => {
         this.setState({reviews: reviews});
         this.changePage();
         this.calcRatings();

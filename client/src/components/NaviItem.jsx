@@ -6,8 +6,8 @@ const NaviItem=({pgNo, changePage, activePg})=>(
     <button type="button"
       className = {(pgNo===activePg)? "navi-page-link navi-page-link-active":"navi-page-link"}
       onClick={ (e)=> {
-        var targetPage = parseInt($(e.target).html());
-        var selected = $(e.target).parent();
+        const targetPage = parseInt($(e.target).html());
+        const selected = $(e.target).parent();
 
         if(!isNaN(targetPage)) {
           $('.navi-page-link').removeClass('navi-page-link-active');

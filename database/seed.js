@@ -2,9 +2,10 @@ const db = require('./index');
 const Reviews = require('./Reviews');
 const faker = require('faker');
 
-const generateRandomReview = () =>{
+const generateRandomReview = (listingID) =>{
   let bias = 3.6; //0 to 5
   return {
+    listingID: listingID,
     author: faker.name.firstName(),
     avatarUrl: faker.image.avatar(),
     reviewText: faker.lorem.sentences(5+Math.floor(Math.random()*3),Math.floor(Math.random()*7)),
@@ -20,16 +21,22 @@ const generateRandomReview = () =>{
   };
 };
 
-const qtyRandomReviews = 210;
-const sampleReviewsStore = [];
+const nlistings = 100;
+let sampleReviewsStore = [];
+let qtyRandomReviews;
 
-for (var i =0;i< qtyRandomReviews;i++){
-  sampleReviewsStore.push(generateRandomReview());
+for (let i=1; i<= nlistings;i++) {
+  qtyRandomReviews = 100 + Math.floor(Math.random()*200);
+  for (let j=0;j< qtyRandomReviews;j++){
+    sampleReviewsStore.push(generateRandomReview(i));
+  }
 }
 
 const insertSampleReviews = function() {
   Reviews.create(sampleReviewsStore)
-    .then(() => db.disconnect());
+    .then(() => db.disconnect())
+    .catch(err => console.log('Unable to connect to mongodb. Error: ', err));
 };
 
 insertSampleReviews();
+

@@ -14,7 +14,7 @@ class App extends React.Component {
       page: [],
       pageCt: [1],
       currentPage: 1,
-      currentRental: null,
+      currentRental: 0,
       avgRatings: {},
       totalRatings: null
     }
@@ -24,18 +24,35 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    this.getReviews();
+    const url = window.location.href.split("/");
+    const listingid = parseInt(url[url.length - 1]);
+
+    if (!isNaN(listingid) && listingid>0) {
+      this.setState({currentRental:listingid}, () => this.getReviews() );
+    } else {
+      console.log('no / invalid listing entered');
+    }
+  }
+
+  getReviews(query){
+    const search = {reviewText:query};
+    console.log('getting reviews for', this.state.currentRental);
+    $.get(`http://localhost:1337/reviews/${this.state.currentRental}`, search, reviews => {
+        this.setState({reviews: reviews});
+        this.changePage();
+        this.calcRatings();
+    });
   }
 
   changePage(pg=1){
-    var totalpgs =Math.ceil(this.state.reviews.length/7);
+    const totalpgs =Math.ceil(this.state.reviews.length/7);
     if(pg<1) {
       pg=1;
     } else if(pg>totalpgs) {
       pg = totalpgs;
     }
 
-    var pageView = this.state.reviews.slice(Math.max(0, (pg-1)*7), pg*7);
+    const pageView = this.state.reviews.slice(Math.max(0, (pg-1)*7), pg*7);
     this.setState({page:pageView});
     this.setState({currentPage:pg});
     this.setPageCt(pg);
@@ -43,50 +60,45 @@ class App extends React.Component {
 
   setPageCt(pg=1){
     pg = Number(pg);
-    var pageCt = [];
-    var totalpgs = Math.ceil(this.state.reviews.length/7);
+    let pageCt = [];
+    const totalReviews = this.state.reviews.length;
 
-    if(pg<3){
-      for (var i=1;i<Math.min(4,totalpgs);i++){
-        pageCt.push(i);
-      }
-    } else if (pg===3) {
-      for (var i=1;i<Math.min(5,totalpgs);i++){
-        pageCt.push(i);
-      }
-    } else if (pg===4) {
-      for (var i=1;i<Math.min(6,totalpgs);i++){
-        pageCt.push(i);
-      }
-    } else if (pg>=5){
-      pageCt.push(1);
-      pageCt.push('...');
-      for(var i=pg-1; i<Math.min(pg+2, totalpgs); i++){
-        pageCt.push(i);
-      }
-    }
+    if(totalReviews>0){
+      const totalpgs = Math.ceil(totalReviews/7);
 
-    if(pg<totalpgs-2){
-      pageCt.push('...');
-      pageCt.push(totalpgs);
-    } else if(pg>=totalpgs-3) {
-      pageCt = pageCt.slice(0,2);
-      if(pg===totalpgs-2) pageCt.push(pg-1);
-      for(var i=Math.max(2,totalpgs-2);i<=totalpgs;i++){
-        pageCt.push(i);
+      if(pg<3){
+        for (let i=1;i<Math.min(4,totalpgs);i++){
+          pageCt.push(i);
+        }
+      } else if (pg===3) {
+        for (let i=1;i<Math.min(5,totalpgs);i++){
+          pageCt.push(i);
+        }
+      } else if (pg===4) {
+        for (let i=1;i<Math.min(6,totalpgs);i++){
+          pageCt.push(i);
+        }
+      } else if (pg>=5){
+        pageCt.push(1);
+        pageCt.push('...');
+        for(let i=pg-1; i<Math.min(pg+2, totalpgs); i++){
+          pageCt.push(i);
+        }
+      }
+
+      if(pg<totalpgs-2){
+        pageCt.push('...');
+        pageCt.push(totalpgs);
+      } else if(pg>=totalpgs-3) {
+        pageCt = pageCt.slice(0,2);
+        if(pg===totalpgs-2) pageCt.push(pg-1);
+        for(let i=Math.max(2,totalpgs-2);i<=totalpgs;i++){
+          pageCt.push(i);
+        }
       }
     }
 
     this.setState({pageCt:pageCt});
-  }
-
-  getReviews(query){
-    var search = {reviewText:query};
-    $.get('/api/reviews', search, reviews => {
-        this.setState({reviews: reviews});
-        this.changePage();
-        this.calcRatings();
-    });
   }
 
   sumRatings(arr, prop){
@@ -109,8 +121,8 @@ class App extends React.Component {
     this.state.avgRatings['Checkin'] = this.avgRating(this.state.reviews, 'Checkin');
     this.state.avgRatings['Value'] = this.avgRating(this.state.reviews, 'Value');
 
-    var sumAvgRatings = 0;
-    for(var k in this.state.avgRatings){
+    let sumAvgRatings = 0;
+    for(let k in this.state.avgRatings){
       sumAvgRatings += Number(this.state.avgRatings[k]);
     }
     this.setState({totalRatings: sumAvgRatings.toFixed(2)});

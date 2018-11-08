@@ -16,7 +16,7 @@
     "setupTestFrameworkScriptFile": "<rootDir>jestconfig.js"
   },
   "scripts": {
-    "web": "nodemon server/index.js",
+    "web": "nodemon server/server.js",
     "dev": "webpack --watch --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "db-init": "node database/seed.js",
@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "compression": "^1.7.3",
     "express": "^4.16.4",

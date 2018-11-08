@@ -31,13 +31,13 @@ const Review =({reviewEntry})=> (
         (reviewEntry.reviewText.length>240)?
          (<button type="button" className="review-readmore"
           onClick={ (e)=> {
-            var selected = $(e.target).parent();
-            var expanded = reviewEntry.reviewText;
+            let selected = $(e.target).parent();
+            const expanded = reviewEntry.reviewText;
             selected.html(expanded);
 
             if(reviewEntry.reply !== null){
               console.log(reviewEntry.reply);
-              selected.append(`<Review reviewEntry={reviewEntry.reply} />`);
+              selected.append(`<Review reviewEntry={reviewEntry.reply} style={{marginLeft:60px}}/>`);
             }
           }}> Read more </button>
          ):""

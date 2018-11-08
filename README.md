@@ -14,6 +14,11 @@
 
 ## Usage
 
+1. Ensure that Mongo is running actively (e.g., on a Mac, open a terminal and run `$ mongod`).
+2. Start the server with script: `npm run web`
+
+### Useful Scripts
+
 1. "web": "nodemon server/index.js",
 1. "dev": "webpack --watch --config webpack.dev.js",
 1. "build": "webpack --config webpack.prod.js",
@@ -37,5 +42,10 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
+
+### Seeding Database
+For testing and development purposes, you may find it helpful to seed a database.
+
+After starting MongoDB and installing dependencies, run the seed script, `npm run db-init`.
 
 # reviews-service

@@ -1,6 +1,6 @@
 version: "3"
 services:
-app:
+  app:
     image: node:alpine
     volumes:
       - ./:/app
@@ -8,5 +8,5 @@ app:
     environment:
       NODE_ENV: production
     ports:
-      - 1337:80
+      - 1337:1337
     command: npm run web

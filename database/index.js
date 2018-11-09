@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-const mongoUri = 'mongodb://localhost/Reviews';
+require('dotenv').config();
+//const mongoUri = 'mongodb://localhost/Reviews';
 
-const db = mongoose.connect(mongoUri, { useNewUrlParser: true });
+const db = mongoose.connect(process.env.MONGOURI, { useNewUrlParser: true });
 
 module.exports = db;

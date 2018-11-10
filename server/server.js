@@ -3,11 +3,13 @@ const app = express();
 const bodyParser = require('body-parser');
 const compression = require('compression');
 const path = require('path');
+require('dotenv').config();
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(compression());
 
-app.set('PORT', 1337);
+app.set('PORT', process.env.port || 1337);
 const Reviews = require('../database/Reviews');
 app.use(express.static(`${__dirname}/../client/dist`));
 app.use((req, res, next) => {
@@ -37,17 +39,5 @@ app.get('/reviews/:id', (req, res) => {
 });
 
 const server = app.listen(app.get('PORT'), () => {
-  console.log(`listening on port ${server.address().port}`);
+  console.log(`Node server running on`, server.address());
 });
-
-// GET /search?q=something
-// req.originalUrl
-// => "/search?q=something"
-
-// GET /file/javascripts/jquery.js
-// req.params[0] (used with regex for window url)
-// => "javascripts/jquery.js"
-
-// example.com/users?sort=desc
-// req.path
-// => "/users"

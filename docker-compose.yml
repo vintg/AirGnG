@@ -7,6 +7,6 @@ services:
     working_dir: /app
     environment:
       NODE_ENV: production
-    # ports:
-    #   - "1337"
+    expose:
+      - "1337"
     command: npm run web

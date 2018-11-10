@@ -6,7 +6,7 @@ import ReviewsList from './components/ReviewsList';
 import Searchbar from './components/Searchbar';
 import ReviewsNavi from './components/ReviewsNavi';
 
-const port = process.env.port || 1337);
+const port = process.env.port || 1337;
 
 class App extends React.Component {
   constructor(props){

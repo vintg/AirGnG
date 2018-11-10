@@ -39,17 +39,5 @@ app.get('/reviews/:id', (req, res) => {
 });
 
 const server = app.listen(app.get('PORT'), () => {
-  console.log(`${server.address(), listening on port ${server.address().port}`);
+  console.log(`Node server running on`, server.address());
 });
-
-// GET /search?q=something
-// req.originalUrl
-// => "/search?q=something"
-
-// GET /file/javascripts/jquery.js
-// req.params[0] (used with regex for window url)
-// => "javascripts/jquery.js"
-
-// example.com/users?sort=desc
-// req.path
-// => "/users"

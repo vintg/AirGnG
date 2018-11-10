@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(compression());
 
-app.set('PORT', process.env.port || 1337);
+app.set('PORT', process.env.PORT || 1337);
 const Reviews = require('../database/Reviews');
 app.use(express.static(`${__dirname}/../client/dist`));
 app.use((req, res, next) => {

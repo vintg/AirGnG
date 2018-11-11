@@ -38,8 +38,9 @@ class App extends React.Component {
 
   getReviews(query){
     const search = {reviewText:query};
-    console.log('getting reviews for', this.state.currentRental);
-    $.get(`http://localhost:${port}/reviews/${this.state.currentRental}`, search, reviews => {
+    var getAddress = `${window.location.origin}/reviews/${this.state.currentRental}`;
+    console.log('getting reviews from', getAddress);
+    $.get(getAddress, search, reviews => {
         this.setState({reviews: reviews});
         this.changePage();
         this.calcRatings();

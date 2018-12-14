@@ -14,16 +14,11 @@
 
 ## Usage
 
-1. Ensure that Mongo is running actively (e.g., on a Mac, open a terminal and run `$ mongod`).
-2. Start the server with script: `npm run web`
-
-### Useful Scripts
-
-1. "web": "nodemon server/index.js",
-1. "dev": "webpack --watch --config webpack.dev.js",
-1. "build": "webpack --config webpack.prod.js",
-1. "db-init": "node database/seed.js",
-1. "test": "jest"
+   "start": "node server/server.js",
+    "dev": "webpack --watch --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "db-init": "node database/seed.js",
+    "test": "jest"
 
 ## Requirements
 

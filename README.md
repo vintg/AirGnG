@@ -14,11 +14,11 @@
 
 ## Usage
 
-   "start": "node server/server.js",
-    "dev": "webpack --watch --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
-    "db-init": "node database/seed.js",
-    "test": "jest"
+1. "start": "node server/server.js",
+2. "dev": "webpack --watch --config webpack.dev.js",
+3. "build": "webpack --config webpack.prod.js",
+4. "db-init": "node database/seed.js",
+5. "test": "jest"
 
 ## Requirements
 
